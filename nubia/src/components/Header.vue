@@ -1,7 +1,7 @@
 <template>
     <div>
         <div id="tou">
-            <div class="left menu" @click="sideBarShow()">
+            <div class="left menu" @click="sideBarShow(),backTop()">
                 <img src="//shop-soa-static.nubia.com/images/newVersion/menu.png" alt="">
             </div>
             <div class="center">
@@ -12,14 +12,13 @@
             <div>车</div>
         </div>
         <transition name="show">
-            <div id="sideBar" v-show="isShow" @touchmove.prevent.stop @mousewheel.prevent>
-                sideBar
-            </div>
+            <sideBar id="sideBar" v-show="isShow"></sideBar>
         </transition>
     </div>
 </template>
 
 <script>
+import sideBar from '@/views/SideBar'
 export default {
   data () {
     return {
@@ -29,7 +28,14 @@ export default {
   methods: {
     sideBarShow(){
       this.isShow = true
+    },
+    backTop () {
+        const ispeed = Math.floor(-this.scrollTop / 5)
+        document.documentElement.scrollTop = document.body.scrollTop = this.scrollTop + ispeed
     }
+  },
+  components: {
+    sideBar
   }
 }
 </script>
@@ -65,15 +71,6 @@ export default {
                 }
             }
         }
-    }
-    #sideBar {
-        background:#99f;
-        position: absolute;
-        left:0;
-        right:0;
-        top:0;
-        bottom:0;
-        z-index: 999999
     }
     .show-enter-active {
         animation: move .5s;

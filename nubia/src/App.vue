@@ -19,6 +19,11 @@ import support from '@/views/Support'
 import shop from '@/views/Shop'
 // import {mapState} from 'vuex'
 export default {
+  data () {
+    return {
+      isShow: false
+    }
+  },
   mounted () {
   },
   // computed:{
@@ -45,5 +50,16 @@ ul{
 }
 #header{
   height: 56px;
+}
+.show-enter-active {
+    animation: move .5s;
+}
+@keyframes move {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(0);
+    }
 }
 </style>
