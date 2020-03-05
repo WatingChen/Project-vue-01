@@ -1,7 +1,7 @@
 <template>
     <div>
         <div id="tou">
-            <div class="left menu" @click="handleClick()">
+            <div class="left menu" @click="sideBarShow()">
                 <img src="//shop-soa-static.nubia.com/images/newVersion/menu.png" alt="">
             </div>
             <div class="center">
@@ -12,7 +12,7 @@
             <div>车</div>
         </div>
         <transition name="show">
-            <div id="sideBar" v-show="isShow">
+            <div id="sideBar" v-show="isShow" @touchmove.prevent.stop @mousewheel.prevent>
                 sideBar
             </div>
         </transition>
@@ -27,7 +27,7 @@ export default {
     }
   },
   methods: {
-    handleClick(){
+    sideBarShow(){
       this.isShow = true
     }
   }
@@ -45,7 +45,7 @@ export default {
         padding: 0 10px;
         box-sizing: border-box;
         position: fixed;
-        // z-index:99;
+        z-index:99;
         .menu{
             width:25px;
             height:25px;
@@ -73,6 +73,7 @@ export default {
         right:0;
         top:0;
         bottom:0;
+        z-index: 999999
     }
     .show-enter-active {
         animation: move .5s;

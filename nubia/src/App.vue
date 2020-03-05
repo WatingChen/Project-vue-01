@@ -2,14 +2,21 @@
   <div id="app">
     <headerBar>我是头部</headerBar>
     <div id="header"></div>
-    <div id="content">内容</div>
-    <footerBar>我是尾部</footerBar>
+    <shop></shop>
+    <sbs></sbs>
+    <support></support>
+    <footerBar></footerBar>
+    <goTop></goTop>
   </div>
 </template>
 
 <script>
 import headerBar from '@/components/Header'// 引入头部
 import footerBar from '@/components/Footer'// 引入尾部
+import sbs from '@/views/Sbs'
+import goTop from '@/views/Gotop'
+import support from '@/views/Support'
+import shop from '@/views/Shop'
 // import {mapState} from 'vuex'
 export default {
   mounted () {
@@ -19,7 +26,11 @@ export default {
   // },
   components: {
     headerBar, // 头部
-    footerBar // 尾部
+    footerBar, // 尾部
+    sbs,
+    goTop,
+    support,
+    shop
   }
 }
 </script>
@@ -34,9 +45,5 @@ ul{
 }
 #header{
   height: 56px;
-}
-#content{
-  height:1000px;
-  background:#ff9;
 }
 </style>
