@@ -13,9 +13,9 @@
 <script>
 import headerBar from '@/components/Header'// 引入头部
 import footerBar from '@/components/Footer'// 引入尾部
-import sbs from '@/views/Sbs'
-import goTop from '@/views/Gotop'
-import support from '@/views/Support'
+import sbs from '@/components/Sbs'
+import goTop from '@/components/Gotop'
+import support from '@/components/Support'
 import shop from '@/views/Shop'
 // import {mapState} from 'vuex'
 export default {
