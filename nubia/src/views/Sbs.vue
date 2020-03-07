@@ -2,19 +2,19 @@
     <div>
         <div class="sbs">
             <a href="/active/c10bc50255fb76f.html#faq03">
-                <i class="icon-circle_7-c"></i>
+                <i class="iconfont icon-clock"></i>
                     7天无理由退货
 			</a>
             <a href="active/postsalesservice.html#faq03">
-                <i class="icon-circle_arrow-down2"></i>
+                <i class="iconfont icon-set"></i>
                     保内免费上门维修
 			</a>
             <a href="/active/9a8b3c2eae31c71.html#faq03">
-                <i class="icon-circle_sf"></i>
+                <i class="iconfont icon-similarproduct"></i>
                     全场59元免运费
 			</a>
             <a href="/active/8934837741ec16c.html">
-                <i class="icon-circle_localization"></i>
+                <i class="iconfont icon-map"></i>
                     查找线下商店
 			</a>
         </div>

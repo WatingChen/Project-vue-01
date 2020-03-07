@@ -1,6 +1,6 @@
 <template>
     <div class="all">
-        <div class="cg" v-for="item in datalist" :key="item.title">
+        <div class="cg" v-for="item in datalist" :key="item.title" @click="handleClick(item.product_id)">
             <div>
                 <img :src="item.big_image" :alt="item.title">
             </div>
@@ -15,9 +15,14 @@ export default {
             datalist:[]
         }
     },
+    methods: {
+        handleClick (id) {
+            this.$router.push(`/product/s/${id}`)
+        }
+    },
     mounted (){
         axios.get('/show/page/shop').then(res=>{
-            console.log(res.data.data.exhibit_info[0].exhibit_items)
+            // console.log(res.data.data.exhibit_info[0].exhibit_items)
             this.datalist = res.data.data.exhibit_info[0].exhibit_items
         })
     }
