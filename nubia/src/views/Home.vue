@@ -3,6 +3,7 @@
     <headerBar></headerBar>
     <div id="header"></div>
     <shop></shop>
+    <router-view></router-view>
     <sbs></sbs>
     <support></support>
     <footerBar></footerBar>

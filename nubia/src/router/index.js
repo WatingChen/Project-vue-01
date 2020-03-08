@@ -31,7 +31,9 @@ const routes = [
   },
   {
     path: '/phone/:xxx/:id',
-    component: Phone
+    component: Phone,
+    children: [
+    ]
   }
 ]
 
