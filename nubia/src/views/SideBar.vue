@@ -11,7 +11,7 @@
         <ul>
             <li v-for="data in datalist" :key="data.name">
                 <van-cell-group>
-                    <van-cell :title="data.name" is-link :to="data.url" />
+                    <van-cell :title="data.name" @click="handleClick(data.view_url,data.url)" />
                 </van-cell-group>
             </li>
         </ul>
@@ -33,7 +33,7 @@ Vue.use(Image)
 export default {
     data () {
         return {
-            datalist: [],
+            datalist: null,
             value:'',
             login:0
         }
@@ -47,17 +47,22 @@ export default {
         },
         onCancel() {
             Toast('取消')
+        },
+        handleClick (id, url) {
+            this.$router.push(`${url}/${id}`)
         }
     },
     mounted (){
         axios.get('/show/page/headMenu').then(res=>{
             // console.log(res.data.data.result)
             this.datalist = res.data.data.result
-            this.url = this.datalist.map((item, index)=>{
+            this.url = res.data.data.result.map((item, index)=>{
                 // console.log(item.url)
                 // console.log(item.url.replace('https://m.nubia.com', ''))
+                this.datalist[index].view_url = item.view_url.split('?')[1]
                 this.datalist[index].url = item.url.replace('https://m.nubia.com', '')
             })
+            // console.log(this.datalist)
         })
         if (localStorage.getItem("token")) {
             this.login = 1
